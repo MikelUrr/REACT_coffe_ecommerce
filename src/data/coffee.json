@@ -1,0 +1,163 @@
+ {
+ "expresso": [
+        {
+            "name":"Expresso colombia",
+            "price": 1.50,
+            "extra": "without milk",
+            "description": "Expresso colombia is a coffee made with colombian coffee beans"
+        },
+        {
+            "name":"Expresso arabica",
+            "price": 1.50,
+            "extra": "without milk",
+            "description": "Expresso arabica is a coffee made with arabica coffee beans"
+        },
+        {
+            "name":"Expresso robusta",
+            "price": 1.50,
+            "extra": "without milk",
+            "description": "Expresso robusta is a coffee made with robusta coffee beans"
+        },
+        {
+            "name":"Expresso liberica",
+            "price": 1.50,
+            "extra": "without milk",
+            "description": "Expresso liberica is a coffee made with liberica coffee beans"
+        },
+        {
+            "name":"Expresso excelsa",
+            "price": 1.50,
+            "extra": "without milk",
+            "description": "Expresso excelsa is a coffee made with excelsa coffee beans"
+        }
+    ],
+    "late":[
+        {
+            "name":"Late colombia",
+            "price": 1.80, 
+            "extra": "with milk",
+            "description": "Late colombia is a coffee made with colombian coffee beans"
+        },
+        {
+            "name":"Late arabica",
+            "price": 1.80, 
+            "extra": "with milk",
+            "description": "Late arabica is a coffee made with arabica coffee beans"
+        },
+        {
+            "name":"Late robusta",
+            "price": 1.80, 
+            "extra": "with milk",
+            "description": "Late robusta is a coffee made with robusta coffee beans"
+        },
+        {
+            "name":"Late liberica",
+            "price": 1.80, 
+            "extra": "with milk",
+            "description": "Late liberica is a coffee made with liberica coffee beans"
+        },
+        {
+            "name":"Late excelsa",
+            "price": 1.80, 
+            "extra": "with milk",
+            "description": "Late excelsa is a coffee made with excelsa coffee beans"
+        }
+    ],
+    "cappuccino":[
+        {
+            "name":"Cappuccino colombia",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Cappuccino colombia is a coffee made with colombian coffee beans"
+        },
+        {
+            "name":"Cappuccino arabica",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Cappuccino arabica is a coffee made with arabica coffee beans"
+        },
+        {
+            "name":"Cappuccino robusta",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Cappuccino robusta is a coffee made with robusta coffee beans"
+        },
+        {
+            "name":"Cappuccino liberica",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Cappuccino liberica is a coffee made with liberica coffee beans"
+        },
+        {
+            "name":"Cappuccino excelsa",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Cappuccino excelsa is a coffee made with excelsa coffee beans"
+        }
+    ],
+    "mocha":[
+        {
+            "name":"Mocha colombia",
+            "price": 2.50,
+            "extra": "with milk",
+            "description": "Mocha colombia is a coffee made with colombian coffee beans"
+        },
+        {
+            "name":"Mocha arabica",
+            "price": 2.50,
+            "extra": "with milk",
+            "description": "Mocha arabica is a coffee made with arabica coffee beans"
+        },
+        {
+            "name":"Mocha robusta",
+            "price": 2.50,
+            "extra": "with milk",
+            "description": "Mocha robusta is a coffee made with robusta coffee beans"
+        },
+        {
+            "name":"Mocha liberica",
+            "price": 2.50,
+            "extra": "with milk",
+            "description": "Mocha liberica is a coffee made with liberica coffee beans"
+        },
+        {
+            "name":"Mocha excelsa",
+            "price": 2.50,
+            "extra": "with milk",
+            "description": "Mocha excelsa is a coffee made with excelsa coffee beans"
+        }
+    ],
+    "macchiato":[
+        {
+            "name":"Macchiato colombia",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Macchiato colombia is a coffee made with colombian coffee beans"
+        },
+        {
+            "name":"Macchiato arabica",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Macchiato arabica is a coffee made with arabica coffee beans"
+        },
+        {
+            "name":"Macchiato robusta",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Macchiato robusta is a coffee made with robusta coffee beans"
+        },
+        {
+            "name":"Macchiato liberica",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Macchiato liberica is a coffee made with liberica coffee beans"
+        },
+        {
+            "name":"Macchiato excelsa",
+            "price": 2.00,
+            "extra": "with milk",
+            "description": "Macchiato excelsa is a coffee made with excelsa coffee beans"
+        }
+    ]
+
+ }
