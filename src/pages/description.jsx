@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./../App.css";
 import chocolate from '../data/chocolate.json';
 import { useLocation } from 'react-router-dom';
@@ -9,8 +9,9 @@ const Description = (props) => {
     const location = useLocation();
     const [selectedChocolate, setSelectedChocolate] = useState(null);
     const coffeeData = location.state;
-    console.log(coffeeData);
+    const [currentPrice, setCurrentPrice] = useState(coffeeData.price);
 
+    console.log(coffeeData);
     const handleAddSelection = (type) => {
         setSelectedChocolate(type);
     };
@@ -20,7 +21,7 @@ const Description = (props) => {
     };
 
     const handleQuantityChange = (event) => {
-        const newQuantity = Math.max(1, parseInt(event.target.value, 10) || 0);
+        const newQuantity = Math.min(5, Math.max(1, parseInt(event.target.value, 10) || 1));
         setQuantity(newQuantity);
     };
 
@@ -36,7 +37,63 @@ const Description = (props) => {
         window.history.back();
     };
 
-    
+    useEffect(() => {
+
+        let updatedPrice = coffeeData.price;
+
+
+        if (selectedSize === 'M') {
+            updatedPrice *= 1.25;
+        } else if (selectedSize === 'L') {
+            updatedPrice *= 1.5;
+        }
+
+
+        if (selectedChocolate && selectedChocolate.name !== 'Without Chocolate') {
+            updatedPrice += 1.5;
+        }
+
+
+        updatedPrice *= quantity;
+
+        setCurrentPrice(updatedPrice);
+    }, [selectedSize, selectedChocolate, quantity, coffeeData.price]);
+
+    const handleSubmit = async () => {
+        try {
+            console.log('Datos a enviar:', {
+                id: coffeeData._id,
+                size: selectedSize,
+                quantity: quantity,
+                chocolate: selectedChocolate,
+                // ...otros datos
+              });
+            const response = await fetch('tu-api-endpoint', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    id: coffeeData._id,
+                    size: selectedSize,
+                    quantity: quantity,
+                    chocolate: selectedChocolate,
+
+                }),
+            });
+
+            if (response.ok) {
+
+                console.log('Datos enviados con éxito');
+                // Después de recibir la respuesta 200, navega de vuelta a la página anterior
+                navigate(-1);
+            } else {
+                console.error('Error al enviar datos:', response.statusText);
+            }
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
+        }
+    };
 
     return (
         <section className='description-container'>
@@ -69,7 +126,10 @@ const Description = (props) => {
                                 key={type.id}
                                 value={type.name}
                                 className={`description-buy-form-choice-chocolate-button ${selectedChocolate === type ? 'active' : ''}`}
-                                onClick={() => handleAddSelection(type)}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleAddSelection(type);
+                                }}
                             >
                                 {type.name}
                             </button>
@@ -84,23 +144,33 @@ const Description = (props) => {
                         <div className='description-buy-form-choice-size-choice'>
                             <button
                                 className={`description-buy-form-choice-size-choice-button ${selectedSize === 'S' ? 'active' : ''}`}
-                                onClick={() => handleSizeButtonClick('S')}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleSizeButtonClick('S');
+                                }}
                             >
                                 S
                             </button>
                             <button
                                 className={`description-buy-form-choice-size-choice-button ${selectedSize === 'M' ? 'active' : ''}`}
-                                onClick={() => handleSizeButtonClick('M')}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleSizeButtonClick('M');
+                                }}
                             >
                                 M
                             </button>
                             <button
                                 className={`description-buy-form-choice-size-choice-button ${selectedSize === 'L' ? 'active' : ''}`}
-                                onClick={() => handleSizeButtonClick('L')}
+                                onClick={(e) => {
+                                    e.preventDefault();
+                                    handleSizeButtonClick('L');
+                                }}
                             >
                                 L
                             </button>
                         </div>
+
                         <div className='description-buy-form-choice-size-quantity'>
                             <button type="button" onClick={handleDecrement}>-</button>
                             <input type="number" value={quantity} onChange={handleQuantityChange} />
@@ -116,11 +186,11 @@ const Description = (props) => {
                         <div className='descrption-price-container'>
 
 
-                            <p className='description-price-container-price'>2.34$
+                            <p className='description-price-container-price'>${currentPrice.toFixed(2)}
                             </p>
 
                             <div className='submit-container'>
-                                <button className='description-buy-form-choice-add-button'>Buy Now</button>
+                                <button className='description-buy-form-choice-add-button'  type='button' onClick={handleSubmit}>Buy Now</button>
                             </div>
                         </div>
                     </div>

@@ -703,7 +703,8 @@
   scrollbar-width: thin;
 }
 
-.home-coffee-buttons {
+.home-coffee-buttons
+{
   border: none;
   background: none;
   color: #000;
@@ -719,9 +720,16 @@
   margin-bottom: 10px;
 }
 
-.home-coffee-buttons:hover {
+.home-coffee-buttons:hover
+ {
   color: #BD9A6F;
   text-decoration: underline;
+}
+.first-button {
+
+  color: #BD9A6F;
+  text-decoration: underline;
+  /* Otros estilos que desees aplicar */
 }
 
 .home-coffee-cards-container {
@@ -752,7 +760,7 @@
   background: #FFF;
   box-shadow: 0px 5.713px 27.422px 0px rgba(0, 0, 0, 0.10);
   position: relative;
-  padding-left: 15px;
+  padding-left: 8px;
 }
 
 .home-star-container {
@@ -778,7 +786,12 @@
   padding: 10px;
 }
 
-.home-cruz-image {}
+.home-coffee-image {
+  width: 159px;
+  height: 140px;
+  border-radius: 28.565px;
+  flex-shrink: 0;
+}
 
 .home-coffee-name {
   color: #000;
@@ -1050,6 +1063,17 @@
   scrollbar-color: #BD9A6F #FFF;
   scrollbar-width: thin;
 }
+.description-buy-form-choice-chocolate {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 10px;
+  width: 100%;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-color: #BD9A6F #FFF;
+  scrollbar-width: thin;
+}
 
 .description-buy-form-choice-chocolate-button {
   margin-left: 14px;
@@ -1059,7 +1083,6 @@
   border-radius: 21.696px;
   border: 0.904px solid #967259;
   color: #000;
-
   font-family: sans-serif;
   font-size: 14.737px;
   font-style: normal;
@@ -1068,7 +1091,8 @@
   /* 58.333% */
 }
 
-.description-buy-form-choice-chocolate-button:active {
+.description-buy-form-choice-chocolate-button.active,
+.description-buy-form-choice-chocolate-button.first-button {
   color: #FFF;
   border-radius: 21.696px;
   background: #967259;
@@ -1147,7 +1171,7 @@ font-weight: 400;
 line-height: 8.564px;
 margin-right: 27px; 
 }
-.description-buy-form-choice-size-choice-button:active{
+.description-buy-form-choice-size-choice-button.active{
   border: none;
   background: #967259;
   color: #FFF;
