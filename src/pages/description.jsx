@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./../App.css";
 import chocolate from '../data/chocolate.json';
-import { useLocation } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 const Description = (props) => {
     const [selectedSize, setSelectedSize] = useState('S');
@@ -10,14 +10,14 @@ const Description = (props) => {
     const [selectedChocolate, setSelectedChocolate] = useState(null);
     const coffeeData = location.state;
     const [currentPrice, setCurrentPrice] = useState(coffeeData.price);
-
+const navigate = useNavigate();
     console.log(coffeeData);
     const handleAddSelection = (type) => {
         setSelectedChocolate(type);
     };
     const handleSizeButtonClick = (size) => {
         setSelectedSize(size);
-        // Puedes realizar otras acciones aquí si es necesario
+       
     };
 
     const handleQuantityChange = (event) => {
@@ -62,28 +62,31 @@ const Description = (props) => {
     const handleSubmit = async () => {
         try {
             console.log('Datos a enviar:', {
-                id: coffeeData._id,
+                product: coffeeData._id,
                 size: selectedSize,
                 quantity: quantity,
                 chocolate: selectedChocolate,
-                // ...otros datos
-              });
-            const response = await fetch('tu-api-endpoint', {
+            });
+    
+            const VITE_BACKEND_HOST = import.meta.env.VITE_BACKEND_HOST;
+    
+            const response = await fetch(`${VITE_BACKEND_HOST}/cart`, {
                 method: 'POST',
+                credentials: 'include',
                 headers: {
                     'Content-Type': 'application/json',
+                    
                 },
                 body: JSON.stringify({
-                    id: coffeeData._id,
+                    product: coffeeData._id,
                     size: selectedSize,
                     quantity: quantity,
                     chocolate: selectedChocolate,
-
+                    price: currentPrice,
                 }),
             });
-
+    
             if (response.ok) {
-
                 console.log('Datos enviados con éxito');
                 // Después de recibir la respuesta 200, navega de vuelta a la página anterior
                 navigate(-1);
@@ -94,6 +97,7 @@ const Description = (props) => {
             console.error('Error en la solicitud:', error);
         }
     };
+    
 
     return (
         <section className='description-container'>

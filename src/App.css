@@ -1303,3 +1303,143 @@ line-height: 12.656px;
 }
 
 /*navbar Component END*/
+
+
+/*cart styles*/
+
+.cart-container{
+
+display: flex;
+flex-direction: column;
+margin-bottom: 90px;
+}
+.card-container{
+  display: flex;
+  flex-direction: row;
+  gap: 5px;
+  margin-left: 5px;
+  margin-right: 5px;
+  
+}
+
+.card{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 10px;
+  width: 100%;
+  gap: 10px;
+  overflow-x: auto;
+  scrollbar-color: #BD9A6F #FFF;
+  scrollbar-width: thin;
+  padding-right: 10px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  background: #FFF;
+  box-shadow: 0px 5.713px 27.422px 0px rgba(0, 0, 0, 0.10);
+  position: relative;
+  border-radius: 28.565px;
+  margin-bottom: 20px;
+  height: 148.835px;
+}
+
+.delete-card{
+  border-radius: 12.578px;
+background: #F37E33;
+width: 62.888px;
+height: 148.835px;
+align-items: center;
+justify-content: center;
+
+display: flex;
+}
+
+.delete-card button{
+  display: flex;
+width: 50.31px;
+height: 50.31px;
+padding: 4.193px 6.289px;
+justify-content: center;
+align-items: center;
+flex-shrink: 0;
+background: transparent;
+border: none;
+}
+
+.card-content-image-container{
+  background: #967259;
+  border-radius: 125.453px;
+  width: 25.091px;
+height: 25.091px;
+}
+.card-content-image{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+padding-left: 30px;
+}
+
+.card-content{
+  display: flex;
+  flex-direction: row;
+gap:57px
+}
+
+.card-content-text-quantity{
+  display: inline-flex;
+  flex-direction: row;
+  gap: 5px;
+}
+.card-content-text-quantity p{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-content-text-quantity button{
+  border: none;
+  border-radius: 6.273px;
+  border: 1.255px solid #967259;
+  background: #FFF;
+  display: flex;
+width: 22.581px;
+height: 22.581px;
+padding: 6.273px;
+justify-content: center;
+align-items: center;
+gap: 12.545px;
+}
+
+.cart-title{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap:100px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  margin-left: 5px;
+}
+
+
+
+.card-content-text{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 5px;
+  margin-top: 10px;
+}
+
+.cart-button{
+  position: fixed;
+  bottom: 90px;
+  right: 15px;
+  border: none;
+  border-radius: 27.12px;
+  background: #F37E33;
+  color: #FFF;
+  font-size: 30px;
+  padding: 15px;
+  z-index: 999;
+}

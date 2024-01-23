@@ -106,7 +106,8 @@ const Home = () => {
           <div key={coffee.name} className='home-coffee-card'>
             <div className="home-star-container"><img src='/star-1.svg' alt='Star' className='home-star-image' /></div>
             <button className="home-cruz-container" onClick={()=>handleDescription(coffee)}><img src='/bi-plus-lg.svg' alt='Star' className='home-cruz-image' /></button>
-            <img src={coffee.photo} alt={coffee.name} className='home-coffee-image' />
+            {/* <img src={coffee.photo} alt={coffee.name} className='home-coffee-image' /> */}
+            <img src="/Rectangle-18.png" alt='Coffee' className='home-coffee-image' />
             <h3 className='home-coffee-name'>{coffee.name}</h3>
             <p className='home-coffee-description'>{coffee.subtitle}</p>
             <p className='home-coffee-price'><span className='home-dolar'>$</span>{coffee.price}</p>

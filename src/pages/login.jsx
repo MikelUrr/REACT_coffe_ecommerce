@@ -27,11 +27,14 @@ const Login = () => {
                 headers: {
                     "Content-Type": "application/json",
                 },
+                credentials: 'include',
                 body: JSON.stringify(formData),
             });
             if (response.ok) {
+                const responseData = await response.json();
+                console.log("Datos enviados",responseData  );
                 console.log("Login exitoso");
-                navigate("/home");
+              navigate("/home");
             } else {
                 console.error("Error en el login");
             }

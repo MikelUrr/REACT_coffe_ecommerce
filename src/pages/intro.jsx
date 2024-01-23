@@ -14,7 +14,7 @@ const handleClick = () => {
      <section>
         <div className='intro-container'>
 <div className='foto-container'>
-    <img src="https://s3-alpha-sig.figma.com/img/997e/90ad/243645f2e335f3a744e8cfaa14f65b74?Expires=1705276800&Key-Pair-Id=APKAQ4GOSFWCVNEHN3O4&Signature=cRTu0CYwiBrbTcQk-rVwT3eUIWxdCX6yaS0cxXmfS9ZLQYRHnb45MfBeBh~z9brO8PHZmuLBWMrnRWhiaL5WPllK3oMNWS651KpLcAeeHX2GqpICUTyv75s~I5BWb7iLgCO76vNggP~l5ePbDpNeI5Xg2CBAABSqYXR9jVE9bTjiBMgctatlPWYS1VdpLCr7VAfkiosm2yPJXxOCiZUmNANnv-68gHlMqQ-W9bjj3H0utU1t4gTCPkY3Pav3uhbqvbWWHr2t371dX~3wmLcLuhm4M7ZeAQQlF9ID3lz6oRRxRsN~aCgnL9bMJHWvu4MgsL5XWhQrkPvSFBn7hRUGRg__" alt="Coffe photo" />
+    <img src="/cafe.png" alt="Coffe photo" />
 </div>
 <div className='text-container'>
 <h1 className='intro-title'>Stay Focused</h1>
