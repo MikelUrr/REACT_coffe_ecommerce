@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import "./../App.css";
 import chocolate from '../data/chocolate.json';
 import { useLocation, useNavigate } from 'react-router-dom';
+import { toast } from 'react-toastify';
 
 const Description = (props) => {
     const [selectedSize, setSelectedSize] = useState('S');
@@ -61,12 +62,7 @@ const navigate = useNavigate();
 
     const handleSubmit = async () => {
         try {
-            console.log('Datos a enviar:', {
-                product: coffeeData._id,
-                size: selectedSize,
-                quantity: quantity,
-                chocolate: selectedChocolate,
-            });
+          
     
             const VITE_BACKEND_HOST = import.meta.env.VITE_BACKEND_HOST;
     
@@ -87,9 +83,8 @@ const navigate = useNavigate();
             });
     
             if (response.ok) {
-                console.log('Datos enviados con éxito');
-                // Después de recibir la respuesta 200, navega de vuelta a la página anterior
-                navigate(-1);
+
+                 navigate("/home"); 
             } else {
                 console.error('Error al enviar datos:', response.statusText);
             }
@@ -98,6 +93,44 @@ const navigate = useNavigate();
         }
     };
     
+    //handle favorites
+
+    const handleFavorites = async () => {
+        try {
+           
+    
+            const VITE_BACKEND_HOST = import.meta.env.VITE_BACKEND_HOST;
+    
+            const response = await fetch(`${VITE_BACKEND_HOST}/favorites`, {
+                method: 'POST',
+                credentials: 'include',
+                headers: {
+                    'Content-Type': 'application/json',
+                    
+                },
+                body: JSON.stringify({
+                    product: coffeeData._id,
+                  
+                }),
+            });
+    
+            if (response.ok) {
+                console.log('Product added to favorites');
+                toast.success('Product added to favorites', {
+                  position: 'top-right',
+                  autoClose: 3000, 
+                  hideProgressBar: false,
+                  closeOnClick: true,
+                  pauseOnHover: true,
+                  draggable: true,
+                });
+              } else {
+                console.error('Error adding to favorites:', response.statusText);
+              }
+        } catch (error) {
+            console.error('Error en la solicitud:', error);
+        }
+    }
 
     return (
         <section className='description-container'>
@@ -107,7 +140,8 @@ const navigate = useNavigate();
                         <button onClick={handleBackButton} className='description-header-arrow-button'></button>
                     </div>
                     <div className='description-header-heart'>
-                        <button className='description-header-heart-button'></button>
+                        {/* on click add to favorites and change the background */}
+                        <button className='description-header-heart-button' onClick={handleFavorites}></button>
                     </div>
                     <div className='description-header-info'>
                         <h3 className='description-header-info-title'>{coffeeData.name}</h3>

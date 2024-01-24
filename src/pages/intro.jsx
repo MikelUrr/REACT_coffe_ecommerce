@@ -1,15 +1,30 @@
 import React from 'react';
+import { useEffect,useState } from 'react';
 import "./../App.css";
 import { useNavigate } from 'react-router-dom';
 
 const Intro = () => {
-
+const [isMobile, setIsMobile] = useState(false);
 const navigate = useNavigate();
 const handleClick = () => {
     navigate('/auth');
 }
 
+//create a function to isMobile
+useEffect(() => {
+const isMobile = () => {
+    const ua = navigator.userAgent;
+    console.log(ua);
+    return /Android|Mobi/i.test(ua);
+    
+}
 
+if (!isMobile()) {
+    alert('This app is only supported on Mobile devices.Please open the website on Mobile device or use the dev tools of your browser to simulate a mobile view. ');
+} else {
+    setIsMobile(true);
+}
+}, []);
     return (
      <section>
         <div className='intro-container'>

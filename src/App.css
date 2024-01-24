@@ -968,8 +968,14 @@
   height: 19.408px;
   flex-shrink: 0;
   border: none;
+  transition: transform 0.3s ease-in-out;
 }
 
+
+.description-header-heart-button:active {
+  /* Scale the button further on click */
+  transform: scale(3.9);
+}
 .description-header-info {
   width: 100%;
   height: 103.056px;
@@ -1442,4 +1448,37 @@ gap: 12.545px;
   font-size: 30px;
   padding: 15px;
   z-index: 999;
+}
+
+.card-content-buynow-button{
+  border: none;
+  border-radius: 27.12px;
+  background: #F37E33;
+  color: #FFF;
+  font-size: 18px;
+  padding: 15px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+
+.checkout-container{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.checkout-container p{
+  padding: 20px;
+  font-size: 18px;
+}
+
+.checkout-container h1{
+  color: #000;
+  
+  font-style: bold;
+  
+  /* 58.333% */
+  margin-top: 200px;
 }
