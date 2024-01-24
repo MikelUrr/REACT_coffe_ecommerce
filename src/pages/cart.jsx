@@ -16,7 +16,7 @@ const fetchCart = async () => {
       credentials: 'include',
     });
     const data = await response.json();
-    console.log(data);
+   
     setCart(data);
 
     const initialShowDeleteButtonsState = {};
@@ -129,7 +129,7 @@ useEffect(() => {
                   <div className="card-content-text-quantity">
               <button className="card-content-text-quantity-button" onClick={() => handleDecrement(item._id,(item.quantity-1))}>-</button>
               <p>{item.quantity}</p>
-              <button className="card-content-text-quantity-button" onClick={() => handleIncrement(item._id,(item.quantity-1))}>+</button>
+              <button className="card-content-text-quantity-button" onClick={() => handleIncrement(item._id,(item.quantity+1))}>+</button>
             </div>
                 </div>
 

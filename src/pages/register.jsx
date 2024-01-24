@@ -37,7 +37,7 @@ const Register = () => {
       // Verificar el estado de la respuesta
       if (response.ok) {
         // Procesar la respuesta o navegar a otra página si es necesario
-        console.log("Registro exitoso");
+        
         navigate("/login");
       } else {
         console.error("Error en el registro");

@@ -12,7 +12,7 @@ const Description = (props) => {
     const coffeeData = location.state;
     const [currentPrice, setCurrentPrice] = useState(coffeeData.price);
 const navigate = useNavigate();
-    console.log(coffeeData);
+   
     const handleAddSelection = (type) => {
         setSelectedChocolate(type);
     };
@@ -115,7 +115,7 @@ const navigate = useNavigate();
             });
     
             if (response.ok) {
-                console.log('Product added to favorites');
+               
                 toast.success('Product added to favorites', {
                   position: 'top-right',
                   autoClose: 3000, 

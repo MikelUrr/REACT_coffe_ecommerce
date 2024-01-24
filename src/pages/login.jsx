@@ -32,8 +32,7 @@ const Login = () => {
             });
             if (response.ok) {
                 const responseData = await response.json();
-                console.log("Datos enviados",responseData  );
-                console.log("Login exitoso");
+              
               navigate("/home");
             } else {
                 console.error("Error en el login");

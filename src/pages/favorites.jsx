@@ -21,7 +21,7 @@ const Favorites = () => {
                 credentials: 'include',
             });
             const data = await response.json();
-            console.log(data);
+         
             setFavorites(data);
 
             const initialShowDeleteButtonsState = {};
@@ -40,7 +40,7 @@ const Favorites = () => {
         , []);
 
     const handleDelete = async (productId) => {
-        console.log('Deleting product with id:', productId);
+        
         try {
             const VITE_BACKEND_HOST = import.meta.env.VITE_BACKEND_HOST;
             const response = await fetch(`${VITE_BACKEND_HOST}/favorites/${productId}`, {

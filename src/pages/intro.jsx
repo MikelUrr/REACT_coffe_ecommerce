@@ -14,7 +14,7 @@ const handleClick = () => {
 useEffect(() => {
 const isMobile = () => {
     const ua = navigator.userAgent;
-    console.log(ua);
+   
     return /Android|Mobi/i.test(ua);
     
 }
@@ -33,7 +33,7 @@ if (!isMobile()) {
 </div>
 <div className='text-container'>
 <h1 className='intro-title'>Stay Focused</h1>
-<p className='intro-text'>Get the cup filled of your choice to stay focused and awake. Diffrent type of coffee menu, hot lottee cappucino</p>
+<p className='intro-text'>This is a demo web. Feel free to use the user@user password: 123 to login or register a user by yourself.</p>
 </div>
 <div className='button-container'>
     <button onClick={handleClick} className='intro-button'>Dive In   <svg width="20" height="16" viewBox="0 0 20 16" fill="none" xmlns="http://www.w3.org/2000/svg">
